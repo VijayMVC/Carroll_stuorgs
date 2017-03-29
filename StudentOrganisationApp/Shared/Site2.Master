@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="StudentOrganisationApp.SiteMaster" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Content/Style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">       
+    </style>
+</head>
+<body >
+	<form id="form1" runat="server"> 
+    <div align="center">
+        <table style="width: 100%; height: 100%"  border="0" cellpadding="0" cellspacing="0"> 
+        <tr style="height:60px">
+        <td colspan="2"  >
+           <asp:ContentPlaceHolder ID="header" runat="server">
+               <table style="width: 100%;" border="0" cellpadding="0" cellspacing="0" >
+                   <tr style="height:55px">
+                       <td colspan = "2" style="background-color:#1e2667;" align="left" class="style3">
+                           <img alt="Head" 
+                            src="http://healthservices-dev.carrollu.edu/Content/Carroll_Logo.gif" 
+                            style="margin-left: 0px;height:55px" />
+                       </td>
+                   </tr>
+                   <tr style="background-color: #E05206;height:5px" bgcolor="#E05206" class="style2">
+                       <td style="width:20% " align="right" valign="bottom">
+                           <asp:Label ID="lblUser" runat="server" forecolor="#FFFFFF">
+                        <asp:LoginName ID="txtLoggedin" runat="server" FormatString="Logged in as : {0}" />
+                        </asp:Label>
+                       </td>
+                       <td style="width:80%" align="left" valign="bottom">
+                           (<asp:LinkButton ID="btnLogOff" runat="server" Text="Logoff" CssClass="button" 
+                            CausesValidation="False" onclick="btnLogOff_Click" style="background-color: #E05206;width:60px">Logout</asp:LinkButton>
+                           )
+                        
+                    <%--(<asp:HyperLink ID="logOutHyperlink" runat="server" EnableViewState="false">Logout</asp:HyperLink>)--%>
+                       </td>
+                   </tr>
+               </table>
+            </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:150px " valign="top" align="left">
+            <asp:Panel runat = "server" ID = "pnlbutton" CssClass="panel">                
+                    <table style="border-right-style: solid; border-right-width: thin; border-right-color: #000000;" >
+                            <tr>
+                         <td>
+                            <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+                            </asp:ToolkitScriptManager>
+                         </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnOrganizations" runat="server" Text="Organizations" CssClass="button"  width='150px' onclick="btnOrganizations_Click"
+                            CausesValidation="False" />
+                            </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnStudents" runat="server" Text="Students" CssClass="button" width='150px' onclick="btnStudents_Click"
+                            CausesValidation="False" />
+                            </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnAdvisor" runat="server" Text="Advisors" CssClass="button" 
+                                 width='150px' onclick="btnAdvisor_Click" 
+                            CausesValidation="False"/>
+                             </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnIncidents" runat="server" Text="Incidents" CssClass="button" width='150px' onclick="btnIncidents_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                            <tr>
+                            <td>
+                            <asp:Button ID="btnEvents" runat="server" Text="Events" CssClass="button" width='150px' onclick="btnEvents_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                            <tr>
+                            <td>
+                            <asp:Button ID="btnServiceProject" runat="server" Text="Service Projects" CssClass="button" width='150px' onclick="btnServiceProject_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnReport" runat="server" Text="Reports" CssClass="button" width='150px' onclick="btnReport_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnSetup" runat="server" Text="Setup" CssClass="button" width='150px' onclick="btnSetup_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                        </table>
+                  
+            </asp:Panel>
+            </td>
+            <td valign="top" align="left">
+            <table>
+            <tr>
+              <td>
+            <asp:Label ID="lblBreadCrump" runat="server" ForeColor="#E05206"></asp:Label>            
+            </td>
+            </tr><tr>
+            <td valign="top" style="width:100%;" align="left">
+                    <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+
+           </td>
+            </tr>
+            </table>
+            </td>
+
+            
+        </tr> 
+        <tr>
+      
+                <td colspan="2" style="text-align: center; background-color: ">
+                    <asp:ContentPlaceHolder ID="footer" runat="server">
+                        <p style="background-color: #E05206; color: #FFFFFF;">
+                            Carroll University</p>
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        
+        </table>
+    </div>
+    </form>
+</body>
+</html>

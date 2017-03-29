@@ -1,0 +1,805 @@
+
+/* site background & default text color */
+body {
+  background-color: #fff;
+  color: #000;
+ }
+
+/* default font for site */
+body * {
+  font-family: verdana, arial, sans-serif;
+    margin-bottom: 0px;
+}
+
+/* Generic link style */
+a,
+a:link,
+a:visited {
+  color: #555555;
+  }
+a:hover {
+  color: #1E2667;
+  }
+
+/***********************************************************  Masthead (hooks up to custom HTML from siteheader.htm) ******************************************************/
+#masthead {
+  background: #1E2667 url(images/mast_right_cc.gif) top right no-repeat;
+  height: 65px; /* match image hight */
+  margin: 0;
+  padding: 0;
+  min-width: 760px;
+  }
+#masthead a,
+#masthead a:link,
+#masthead a:visited {
+  display: block;
+  cursor: pointer;
+  height: 100%;
+  width: 400px;
+  }
+#masthead h1 {
+  text-indent: -9999px;
+  background: transparent url(images/mast_left_cc.gif) top left no-repeat;
+  height: 65px; /* match image height */
+  width: 760px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  }
+
+/***************************************************** Welcome back / Login Bar *******************************************************************************************/
+/* background & text color */
+#welcomeBackBar {
+  color: #fff;
+  background-color: #E05206;
+  }
+/* Link text color */
+#welcomeBackBar a,
+#welcomeBackBar a:link,
+#welcomeBackBar a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-style: italic;
+  }
+#welcomeBackBar a:hover {
+  text-decoration: underline;
+  }
+/* username & password text boxes */
+#welcomeBackBar input {
+  background-color: #fff;
+  }
+
+
+
+/************************************************ General Portlet elements ************************************************/
+
+/* Portlet SubHEaders */
+h4 {
+  background-color: #bacbdd;
+  color: #000;
+  }
+
+/* small section at the bottom of the admin portlets with "Exit" button in it */
+.pActions {
+  background-color: #ddd;
+  }
+
+/* text sections above input fields giving info about the form fields (default small grey background) */ 
+.hint {
+  background-color: #eee;
+  }
+
+/* used for odd (alternating) rows in a grid of list */
+.alt {
+  background-color: #efefef;
+  }
+
+/* a Highlighted row in a grid or list (can be more than 1 per gird or list) */
+.highlighted {
+  background-color: #FFFED8;
+  }
+
+/* a selected row in a grid or list (only 1 per grid or list) */
+.selected {
+  background-color: #FFFED8;
+  }
+
+/* Site Errors */
+div.oops {
+  border: 1px solid red;
+  background-color: #fcc;
+  }
+
+/* collapseable panel */
+div.cp div.cpHead {
+  background-color: #ddd;
+  }
+
+
+
+/********************************************************* Tabs & Breadcrumbs **************************************************************************************/
+
+
+#divTabsOuter {
+ clear: both;
+ height: 0px;
+ margin: 0pt;
+ padding: 0pt;
+ font-size: 0pt;
+ border: none;
+}
+
+#headerTabs {
+ margin: 0pt;
+ padding: 1pt 0px;
+}
+
+#headerTabs ul {
+ margin: 0pt;
+ padding: 0pt;
+}
+
+#headerTabs li {
+ background: #1E2667;       /* this and the next are customized colors */
+ border: solid 1px #1E2667;
+ border-bottom: none;
+ display: inline;
+ float: left;
+ margin:1pt 2px 0px;
+ padding: 3px 5px;
+ text-decoration: none;
+ white-space: nowrap;
+}
+
+/* selected tab */
+#headerTabs li.selected {
+ background-color:#ffffff;   /* the same color as the breadcrumbs background */
+ border-color: #1E2667;
+ color: #1E2667;            /* the same color as the breadcrumbs border */
+ z-index: 3;            /* raises the selected tab up a layer or two to overlap the breadcrumbs area */
+ position: relative;    /* activate positioning so we can make the following adjustment */
+ top: 1px;              /* moves the tab down a pixel so its bottom edge hides the border of the breadcrumbs area */
+ padding: 4px 4px 1px;
+}
+/* the rest of the tab section is the same as before */
+
+#headerTabs li a:hover {
+color:#ffffff;
+text-decoration:underline;
+}
+
+
+
+
+/******************************************************** START Side Bar ***********************************************************************/
+
+/* border & background for sidebar sections */
+#sideBar div.sideSection {
+  border-color: #c1c1c1;
+  background-color: #fff;
+  border-width: 0px 0px 1px 0px;
+  padding: 0px;
+  margin: 0px;
+  width: 16em;
+  }
+
+/* main sidebar headers */
+#sideBar h2,
+#sideBar h2 a,
+#sideBar h2 a:link,
+#sideBar h2 a:visited {
+  font-family: Arial;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #1E2667;
+  font-weight: bold;
+  font-size: 110%;
+}
+/* hover style for main headers that are links */
+#sideBar h2 a:hover {
+  text-decoration: underline;
+}
+#sideBar h2 {
+  border-style: solid;
+  border-color: #C1C1C1;
+  border-width: 0px 0px 1px 0px;
+  }
+
+/* second level sidebar headers */
+#sideBar h3,
+#sideBar h3 a,
+#sideBar h3 a:link,
+#sideBar h3 a:visited {
+  color: #000;
+  text-decoration: none;
+  background-color: #d2d2d2;
+}
+/* hover style for second level headers that are links */
+#sideBar h3 a:hover {
+  text-decoration: underline;
+}
+
+/* spacer between related pages and contexts */
+#sideBar hr {
+  color: #d2d2d2;
+  }
+
+
+/* regualr side bar link style */
+#sideBar a,
+#sideBar a:link,
+#sideBar a:visited {
+  color: #000;
+  text-decoration: none;
+  }
+#sideBar a:hover {
+  color: #000;
+  text-decoration: underline;
+  }
+
+/* style for add a page link */
+#sideBar .addPage a,
+#sideBar .addPage a:link,
+#sideBar .addPage a:visited {
+  color: #000;
+  }
+#sideBar .addPage a:hover {
+  color: #f00;
+  }
+  
+  
+#sideBar div#quickLinks {
+  width: 16em;
+  border: solid 1px #d2d2d2;
+  border-left: none;
+  border-right: none;
+  background: #fff;
+  padding-bottom:6px;
+  margin: 0 0 10px 0;
+  }
+  
+  
+/* JLA Quick Links Title */
+#sideBar div#quickLinks h3 {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #c1c1c1;
+  border-right-color: #c1c1c1;
+  border-bottom-color: #c1c1c1;
+  border-left-color: #c1c1c1;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  background: #ececec; 
+  color: #FFFFFF;
+  font-family: Arial;
+  text-decoration: none;
+  background-color: #1E2667;
+  font-weight: bold;
+  font-size: 90%;
+  }
+/* End Quick Links Title */
+
+/* JLA */
+#quickLinks dd {
+  display: block;
+  padding: 0;
+  margin: 5px 0 0 10px;
+  font-size: 85%;
+  }
+
+  
+  
+
+/* sidebar quick links border */
+/* #sideBar div#quickLinks {
+  border-color: #6C9CD4;
+  } */
+
+#pagePortlets {margin: 5px 0 0 15px; padding-left:0; }
+
+#pagePortlets li {
+padding: 2px 0 2px 0;
+font-size: 100%;
+font-weight: normal;
+border: 0;
+font-style:italic;
+
+background: #f5f5f5;
+list-style-type: none;
+line-height: 1.2em;
+  }
+
+#pagePortlets  li a, #pagePortlets  li a:link, #pagePortlets  li a:visited { color: #00f;   text-decoration: underline; } 
+
+#pagePortlets li a:hover {text-decoration: underline;}
+
+
+
+/********************************************************************* Site Footer*******************************************************************/
+
+/* site footer  */
+#foot {
+  background-color: #ffffff;
+  color: #000;
+  border-bottom: 1px solid #C1C1C1;
+  border-top: 1px solid #C1C1C1;
+  /* margin-bottom: 15px; */
+  margin: 0px 0px 30px 0px;
+  }
+/* footer link styles */
+#foot, 
+#foot a,
+#foot a:link,
+#foot a:visited {
+  color: #666666;
+  font-size: 92%;
+  text-decoration: none;
+}
+#foot a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+
+
+/********************************************* portlet header, color, border etc ***************************************************************************/
+
+/* portlet header text color & background color */
+.pHead {
+  background: #fff; 
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #CCCCCC;
+  /* padding-top: 20px; */
+  margin-top: 30px;
+  padding-bottom: 1px;
+  }
+.pHead a,
+.pHead a:link,
+.pHead a:visited {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: #1E2667;
+  text-decoration: none;
+  }
+.pHead h3 {
+  margin-bottom: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: #1E2667;
+  text-decoration: none;
+  font-size: 125%;
+}
+
+/* name of portlet when the portlet can be maximized */
+.pHead a,
+.pHead a:link,
+.pHead a:visited {
+  text-decoration: none;
+  }
+.pHead a:hover {
+  text-decoration: none;
+  color: #666666;
+  }
+  
+/* shortcut tag styling */
+.pShortcut {
+  border-color: #000;
+  display:none;
+  }
+
+.pShortcut a,
+.pShortcut a:link,
+.pShortcut a:visited {
+  color: #000;
+  text-decoration: none;
+  }
+.pShortcut a:hover {
+  text-decoration: underline;
+  }
+  
+  
+/* border & background for the portlets */
+.portlet {
+  border: solid 0px #7C7C7C;
+  background: #fff;
+  line-height: 1.2;
+  }
+div.tabGroup ul.tabHeaders li,
+.securityGrid table thead th,
+.groupedGrid thead td,
+.groupedGrid thead th,
+.groupedGrid tbody.ghead tr td,
+.groupedGrid tbody.gfoot tr td { 
+  border-color: #fff !important; /* match portlet background color (leave "!important" in there)*/
+  }
+  
+  
+  
+.pSection {
+  font-size: 11px;
+  line-height: 160%;
+  }
+
+
+
+/**************************************************** grids ************************************************************************************/
+/* grouped grid header style 
+.groupedGrid tfoot td,
+.groupedGrid tfoot th,
+.groupedGrid thead td,
+.groupedGrid thead th,
+.groupedGrid tbody th,
+.groupedGrid tbody.ghead tr td,
+.groupedGrid tbody.gfoot tr td { 
+  background-color: #ddd;
+  }
+/* sub header for a grouping 
+.groupedGrid tbody.gsubhead tr td {
+  border-bottom: solid 1px #eee;
+  }
+/* table level header and footer 
+.groupedGrid tbody.ghead tr td,
+.groupedGrid tbody.gfoot tr td { 
+  background-color: #ccc;
+  }
+/* second level grouping headers 
+.groupedGrid tr.subGroup td {
+  border-bottom: solid 1px #000;
+  }
+/* grid header sort links 
+.groupedGrid th a,
+.groupedGrid th a:link,
+.groupedGrid th a:visited {
+  color: #000;
+  }
+.groupedGrid th a:hover {
+  color: #666;
+  }
+/* END GroupedDataGrid Styles 
+
+
+/* START DateRangeEdit Styles 
+.dateRangeEdit div.opt a, 
+.dateRangeEdit div.opt a:link, 
+.dateRangeEdit div.opt a:visited {
+  text-decoration: none;
+  color: #000;
+  }
+.dateRangeEdit div.opt a:hover {
+  color: #666;
+  }
+.dateRangeEdit div.opt label:hover {
+  color: #666;
+  }
+/* END DateRangeEdit */
+
+/********************************************************************* Portlet Tabs ************************************************************************/
+
+/* tab bar & inactive tab background color */
+div.tabGroup ul.tabHeaders,
+div.tabGroup ul.tabHeaders a,
+div.tabGroup ul.tabHeaders a:link,
+div.tabGroup ul.tabHeaders a:visited {
+  color: #000;
+  background-color: #ddd;
+  }
+
+/* selected tab */
+div.tabGroup ul.tabHeaders li.selected a,
+div.tabGroup ul.tabHeaders li.selected a:link,
+div.tabGroup ul.tabHeaders li.selected a:visited,
+div.tabGroup ul.tabHeaders li.selected a:hover {
+  background-color: #fff;
+  }
+
+/* tab hover */
+div.tabGroup ul.tabHeaders a:hover {
+  background-color: #eee;
+  }
+
+
+/************************************************************** Security Grid ******************************************************************************/
+
+/* START Securtity Grid */
+.securityGrid h5 {
+  background-color: #ddd;
+  }
+.securityGrid table thead th {
+  background-color: #ddd;
+  }
+.securityGrid table thead th.kids {
+  background-color: #7686AC;
+  color: #fff;
+  }
+.securityGrid table th.admin {
+  color: #fff;
+  background-color: #000;
+  }
+.securityGrid table tbody td.admin {
+  background-color: #DAE3F2;
+  }
+.securityGrid table tbody .alt td.admin {
+  background-color: #C4D2EA;
+  }
+/* END Securtity Grid */
+
+/* background for context list in user/role selector */
+.principalSelector .roles tbody th,
+.principalSelector .users tbody th {
+  background-color: #ddd;
+  }
+.principalSelector td.contextTree {
+  background-color: #ddd;
+  }
+
+
+
+/************************************************ portlet drop down menu ************************************************************/
+.pToolbar,
+.pToolbar ul,
+.pToolbar a,
+.pToolbar a:link,
+.pToolbar a:visited,
+.pToolbar .pTool,
+.pToolbar .menu a.hasKids,
+.pToolbar .menu a,
+.pToolbar .menu a:link,
+.pToolbar .menu a:visited {
+  background-color: #4870AC;
+  border-color: #fff;
+  color: #fff;
+  } 
+/* active/hover menu sylte (do not remove "!important") */
+.pToolbar a:hover,
+.pToolbar a.active,
+.pToolbar .pTool a:hover,
+.pToolbar .pTool a.active {
+  color: #fff !important;
+  background-color: #3366cc !important;
+  }
+
+
+
+
+
+#copyright {
+  visibility: hidden;
+  }
+
+.help {
+ display: none;
+ }
+
+#pageTitle h2,
+#pageTitle h2 a,
+#pageTitle h2 a:link,
+#pageTitle h2 a:visited {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 130%;
+  text-decoration: normal;
+  }
+#pageTitle h2 #contextName {
+  font-size: 140%;
+  font-weight: normal;
+  }
+#pageTitle h2 a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+  }
+ul#pagePortlets {
+  display: block;
+  }
+
+#mainCrumbs {
+  background-color: #e4e5ed;
+  z-index: 0;
+  }
+#mainCrumbs,
+#mainCrumbs a,
+#mainCrumbs a:link,
+#mainCrumbs a:visited,
+#mainCrumbs a:hover {
+  color: #474747;
+  }
+  
+#sideBar li.addPage {
+  background-color: #fff;
+  }
+  
+#contextPages li {
+  background: none;
+  border-width: 0px;
+  color: 596273;
+  }
+#contextPages li a, 
+#contextPages li a:link, 
+#contextPages li a:visited {
+  color: #596273;
+  text-decoration:none;
+  }
+#contextPages li a:hover {
+  color: #596273;
+  text-decoration: underline;
+  }
+#contextPages li.currentPage {
+  background: none;
+  }
+#contextPages li.currentPage,
+#contextPages li.currentPage a, 
+#contextPages li.currentPage a:link, 
+#contextPages li.currentPage a:visited {
+  color: #000;
+  text-decoration:none;
+  }
+#contextPages li.currentPage a:hover {
+  color: #000;
+  text-decoration: underline;
+  }
+ul#contextPages {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  }
+/*
+#sideBar div#quickLinks {
+  display: none;
+  }
+  */
+.buttonBar {
+  background-color: #fff;
+  }
+#calSideBar {
+  background-color: #fff;
+  }
+#pageTitleButtons{
+  font-size: 85%;
+  margin: 9px 0px 0px 0px;
+  }
+#pageTitleButtons a:link,
+#pageTitleButtons a:visited {
+  text-decoration: none;
+  color: #ffffff;
+  }
+#pageTitleButtons a:hover {
+  color: #333333;
+  }
+.pContent {
+  margin-top: 4px;
+  }
+#sideBar {
+  border-style: solid;
+  border-width: 0px 1px 0px 0px;
+  border-color: #C1C1C1;
+  padding-right: 0px;
+  }
+#portlets {
+  padding: 0px 12px 12px 12px;
+  }
+#pageTitle {
+  /* margin: 30px 12px 0px 4px; */
+  /* padding: 0pt; */
+  margin: -4px -15px 0px -12px;
+  padding: 0px 22px 0px 16px;
+ /* margin: 0px -10px 0px -12px; */
+ /* padding: 20px 22px 10px 16px;  */
+  background-color: #1E2667;
+  }
+#pageTitleImage {
+/* top;right;bottom;left */
+  margin: 0px 0px 0px -12px;
+  padding: 0px 0px 0px 0px;
+}  
+  
+#policies {
+  float: right;
+  }
+  
+/* Modifications to space out DisplayIndicator values for Handouts, Readings, Bookmarks, etc.  */  
+.dateRangeEdit div.start, 
+.dateRangeEdit div.end, 
+.dateRangeEdit div.action {
+margin-bottom:25px;
+}
+ 
+/************** My CoursEval ***************/
+#sideBar div#coursevalhi {  border: solid 1px #6C9CD4;}
+#sideBar div#coursevallo {  border: solid 1px #6C9CD4;}
+#sideBar div#coursevalhi h3 {background-color: #ff6633; color: #fff; margin:0px; padding: 2px 2px 2px 5px;}
+#sideBar div#coursevallo h3 {background-color: #6C9CD4; color: #fff; margin:0px; padding: 2px 2px 2px 5px;}
+#sideBar div#coursevalhi h4 {background-color: #ffffff;  margin:0px; padding: 2px 2px 2px 5px;}
+#sideBar div#coursevallo h4 {background-color: #ffffff;  margin:0px; padding: 2px 2px 2px 5px;}
+
+/************** Added by Sree ***************/
+.button
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 1px;
+    clear: both;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 10px;
+    background: #1E2667;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    width: 150px;
+    float: right;
+    right: -1px;
+    position: relative;
+    top: 0px;
+}
+
+hover
+{
+  background: #E05206;	
+}
+
+.button:hover
+{
+  background: #E05206;	
+}
+
+.buttonTab
+{
+	/*display: inline-block;*/ 
+    /*margin-top: 1px;*/
+	border: solid 2px white;	
+	padding: 4px;
+	background: #1e2667;
+	color: #fff;
+	font-size: 11px;
+    font-weight: bold;
+}
+
+.field-validation-error
+{
+    color: #ff0000;
+    font-size: 50%
+}
+
+.LinkButton
+{
+    clear: both;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px;
+    background: #E05206;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.Headers
+{
+    font-size: medium;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.Error
+{
+    font-size: medium;    
+    font-weight: bold;
+    color:Red;
+    width:300px;
+}
+
+.largeTextbox
+{
+    /*margin-left: 20px;*/
+}
+.panel
+{
+border-left-width:thick;
+border-left-color:Black;
+}
+    

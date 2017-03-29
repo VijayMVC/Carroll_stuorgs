@@ -1,0 +1,52 @@
+USE [StudentOrgs]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_NewServiceProjectComments]    Script Date: 02/08/2013 09:55:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[sp_NewServiceProjectComments]
+	-- Add the parameters for the stored procedure here
+	@ServiceProject_ID int, 
+	@Date varchar(20), 
+	@Text text,
+	@UserID varchar(20)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	declare @today datetime;
+
+	IF @Text is null
+		return 0;
+
+	IF @Date is null OR rtrim(ltrim(@Date)) = ''
+		select @today = getdate()
+	ELSE
+		select @today = CONVERT(datetime,@Date)
+
+    -- Insert statements for procedure here
+	INSERT INTO ServiceProjectComments (ServiceProject_ID, Date, text,UserID)
+	VALUES (@ServiceProject_ID, @today, @Text,@UserID)
+
+	if @@ERROR<>0
+	BEGIN 
+		RaisError('100', 16, 1)
+		RETURN -100;
+	END
+	else return 0;
+	
+END
+
+GO
+

@@ -1,0 +1,351 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="StudentOrganisationApp.Shared.Site1" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Content/Style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 21%;
+        }
+        .style2
+        {
+            width: 10%;
+        }
+        
+#navigation {font-size:0.75em; width:150px;}
+#navigation ul {margin:0px; padding:0px;}
+#navigation li {list-style: none;} 
+
+ul.top-level {}
+ul.top-level li {
+ border-bottom: #fff solid;
+ border-top: #fff solid;
+ border-width: 1px;
+}
+
+#navigation a {
+ color: #fff;
+ cursor: pointer;
+ display:block;
+ height:30px;
+ line-height: 25px;
+ text-indent: 10px;
+ text-decoration:none;
+ width:100%;
+ font-size: 12px;
+ font-weight: bold;
+ border-radius: 15px;
+ background:#1E2667;
+}
+#navigation a:hover
+{
+    background: #E05206;
+ text-decoration:underline;
+}
+
+#navigation li:hover {
+ background: #E05206;
+ position: relative;
+}
+
+
+ul.sub-level {
+    display: none;
+}
+li:hover .sub-level {
+    background: #E05206;
+    border: #fff solid;
+    border-width: 1px;
+    display: block;
+    position: absolute;
+    left: 75px;
+    top: 5px;
+}
+        ul.sub-level li {
+            border: none;
+            float: left;
+            width: 150px;
+        }
+#navigation .sub-level {
+    background: White;
+}
+
+/*Seconda Level*/
+#navigation .sub-level {
+    background: White;
+}
+
+/*Third Level*/
+#navigation .sub-level .sub-level {
+    background: White;
+}
+  
+    /*RESET STYLES*/
+li:hover .sub-level .sub-level {
+	display:none;
+}
+.sub-level li:hover .sub-level {
+	background: #E05206;
+    border: #fff solid;
+    border-width: 1px;
+    display: block;
+    position: absolute;
+    left: 75px;
+    top: 5px;
+}
+
+
+    </style>
+</head>
+<body >
+	<form id="form1" runat="server"> 
+    <div align="center">
+        <table style="width: 100%; height: 100%"  border="0" cellpadding="0" cellspacing="0"> 
+            <asp:ContentPlaceHolder ID="header" runat="server">
+                <tr>
+                    <td colspan="2" bgcolor="#38417D">
+                        <img alt="Head" 
+                            src="http://saturn.carrollu.edu/csc640_team4/Content/header_logo.gif" 
+                            style="margin-left: 0px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #E05206; " align="right" class="style2">
+                        <asp:Label ID="lblUser" runat="server" forecolor="#FFFFFF">
+                        <asp:LoginName ID="txtLoggedin" runat="server" FormatString="Logged in as : {0}" />
+                        </asp:Label>
+                    </td>
+                    <td style="background-color: #E05206; width: 40%" align="left" " class="style1" >
+                        (<asp:LinkButton ID="btnLogOff" runat="server" Text="Logoff" CssClass="button" 
+                            CausesValidation="False" style="background-color: #E05206;">Logout</asp:LinkButton>
+                        )
+                    <%--(<asp:HyperLink ID="logOutHyperlink" runat="server" EnableViewState="false">Logout</asp:HyperLink>)--%>
+                    </td>
+                </tr>
+            </asp:ContentPlaceHolder>
+            <tr>
+                <td valign="top" align="center">
+           <asp:Panel runat = "server" ID = "pnlbutton">
+                
+                            <tr>
+                         <td>
+                    <table>
+                            
+                         
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnOrganizations" runat="server" Text="Organizations" CssClass="button"  width='195px' onclick="btnOrganizations_Click"
+                            CausesValidation="False" />
+                            </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnAddOrg" runat="server" Text="Add" 
+                                 CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnAddOrg_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnEditOrg" runat="server" Text="Edit" 
+                                 CssClass="button"  width='100px'
+                            CausesValidation="False" onclick="btnEditOrg_Click" />
+                            </td>
+                        </tr>
+
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnStudents" runat="server" Text="Students" CssClass="button" width='195px' onclick="btnStudents_Click"
+                            CausesValidation="False" />
+                            </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnAdvisor" runat="server" Text="Advisor" CssClass="button" width='195px' onclick="btnAdvisor_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnAddAdvisor" runat="server" Text="Add" 
+                                 CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnAddAdvisor_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnEditAdvisor" runat="server" Text="Edit" 
+                                 CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnEditAdvisor_Click" />
+                            </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnIncidents" runat="server" Text="Incidents" CssClass="button" width='195px' onclick="btnIncidents_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnAddInci" runat="server" Text="Add" 
+                                 CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnAddInci_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnEditInci" runat="server" Text="Edit" 
+                                 CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnEditInci_Click" />
+                            </td>
+                        </tr>
+                            <tr>
+                            <td>
+                            <asp:Button ID="btnEvents" runat="server" Text="Events" CssClass="button" width='195px' onclick="btnEvents_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnAddEvent" runat="server" Text="Add" CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnAddEvent_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnEditEvent" runat="server" Text="Edit" 
+                                 CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnEditEvent_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <asp:Button ID="btnServiceProject" runat="server" Text="ServiceProjects" CssClass="button" width='195px' onclick="btnServiceProject_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnAddSP" runat="server" Text="Add" 
+                                 CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnAddSP_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                         <td>
+                            <asp:Button ID="btnEditSP" runat="server" Text="Edit" 
+                                 CssClass="button"  width='100px' 
+                            CausesValidation="False" onclick="btnEditSP_Click" />
+                            </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnReport" runat="server" Text="Reports" CssClass="button" width='195px' onclick="btnReport_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                            <tr>
+                         <td>
+                            <asp:Button ID="btnSetup" runat="server" Text="Setup" CssClass="button" width='195px' onclick="btnSetup_Click"
+                            CausesValidation="False" />
+                             </td>
+                        </tr>
+                        </table>
+                  </td>
+                        </tr>
+            </asp:Panel>
+                   <%-- <div id="navigation">
+                    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+                            </asp:ToolkitScriptManager>
+    <ul class="top-level">
+        <li><a href="#">Organizations</a>
+            <ul class="sub-level">
+                <li><a href="CreateOrganization.aspx">Add</a></li>
+                <li><a href="EditOrganization.aspx">Edit</a></li>               
+            </ul>
+        </li>
+        <li><a href="EditStudent.aspx">Students</a>
+            
+        </li>
+        <li><a href="#">Advisors</a>
+            <ul class="sub-level">
+                <li><a href="CreateAdvisor.aspx">Add</a></li>
+                <li><a href="EditAdvisor.aspx">Edit</a></li>               
+            </ul>
+        </li>
+        <li><a href="#">Incidents</a>
+            <ul class="sub-level">
+                <li><a href="NewIncidents.aspx">Add</a></li>
+                <li><a href="EditIncidents.aspx">Edit</a></li>               
+            </ul>
+        </li>
+        <li><a href="#">Events</a>
+            <ul class="sub-level">
+                <li><a href="NewEvents.aspx">Add</a></li>
+                <li><a href="EditEvents.aspx">Edit</a></li>               
+            </ul>
+        </li>
+        <li><a href="#">Service Projects</a>
+            <ul class="sub-level">
+                <li><a href="CreateServiceProject.aspx">Add</a></li>
+                <li><a href="EditServiceProject.aspx">Edit</a></li>               
+            </ul>
+        </li>
+        <li><a href="#">Reports</a>            
+        </li>
+        <li><a href="#">SetUp</a>
+            <ul class="sub-level">
+                <li><a href="#">Org Category</a>
+                   <ul class="sub-level">
+                        <li><a href="CreateOrganizationCategory.aspx">Add</a></li>
+                        <li><a href="EditOrganizationCategory.aspx">Edit</a></li>                        
+                    </ul></li>
+                <li><a href="#">Member Type</a>
+                <ul class="sub-level">
+                        <li><a href="CreateMemberType.aspx">Add</a></li>
+                        <li><a href="EditMemberType.aspx">Edit</a></li>                        
+                    </ul></li>                 
+                <li><a href="#">Org Requirement</a>
+                <ul class="sub-level">
+                        <li><a href="CreateRequiredEvent.aspx">Add</a></li>
+                        <li><a href="EditRequiredEvent.aspx">Edit</a></li>                        
+                    </ul></li>                
+                <li><a href="#">User</a>
+                <ul class="sub-level">
+                        <li><a href="AddUser.aspx">Add</a></li>
+                        <li><a href="EditUser.aspx">Edit</a></li>                        
+                    </ul></li>                             
+            </ul>
+        </li>
+    </ul>
+</div>--%>
+                </td>
+                <td valign="top" style="width:900px;" align="left">
+                    <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </td>
+            </tr> 
+              <tr>
+                <td style="width: 10%" valign="top">
+                </td>
+               
+                <td style="width: 10%">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; background-color: ">
+                    <asp:ContentPlaceHolder ID="footer" runat="server">
+                        <p style="background-color: #E05206; color: #FFFFFF;">
+                            Carroll University</p>
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
